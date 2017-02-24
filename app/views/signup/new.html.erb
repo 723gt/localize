@@ -1,0 +1,19 @@
+<%= bootstrap_form_for @user,:url => {:action => 'create'} do |f| %>
+  <%# f.label "ID",:user_id %>
+  <%= f.text_field :user_id %>
+
+  <%# f.label "Name",:name %>
+  <%= f.text_field :name %>
+
+  <%# f.label "password",:password %>
+  <%= f.password_field :password %>
+
+  <%# f.label "password_confirmation", :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%# f.label "email address", :email %>
+  <%= f.email_field :email %>
+
+  <%= f.submit "Sign Up" %>
+<% end %>
+
