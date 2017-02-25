@@ -16,7 +16,16 @@ class SignupController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
+    begin 
+      @user.save
+      to_cont = "timeline"
+      to_act = "index"
+    rescue ActiveRecord::RecordNotUnique => e
+      to_cont = "signup"
+      to_act = "new"
+    end
+
+    redirect_to(:controller => to_cont,:action => to_act)
   end
 
   private
