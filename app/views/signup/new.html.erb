@@ -5,14 +5,16 @@
   <%# f.label "Name",:name %>
   <%= f.text_field :name %>
 
+  <%# f.label "email address", :email %>
+  <%= f.email_field :email %>
+
+  <%= f.select :region ,@region_arraty %>
+
   <%# f.label "password",:password %>
   <%= f.password_field :password %>
 
   <%# f.label "password_confirmation", :password_confirmation %>
   <%= f.password_field :password_confirmation %>
-
-  <%# f.label "email address", :email %>
-  <%= f.email_field :email %>
 
   <%= f.submit "Sign Up" %>
 <% end %>
