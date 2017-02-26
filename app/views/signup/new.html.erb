@@ -1,21 +1,20 @@
-<%= bootstrap_form_for @user,:url => {:action => 'create'} do |f| %>
-  <%# f.label "ID",:user_id %>
-  <%= f.text_field :user_id,:label => "ID" %>
+<div class="row">
+  <div class="col_md_4 well center-block">
+    <%= bootstrap_form_for @user,
+      :url => {:action => 'create'},:html => {:class => "text-center"} do |f| %>
+        <%= f.text_field :user_id,:label => "ID" %>
 
-  <%# f.label "Name",:name %>
-  <%= f.text_field :name,:label => "ユーザー名" %>
+        <%= f.text_field :name,:label => "ユーザー名" %>
 
-  <%# f.label "email address", :email %>
-  <%= f.email_field :email,:label => "メールアドレス" %>
+        <%= f.email_field :email,:label => "メールアドレス" %>
 
-  <%= f.select :region ,@region_arraty,:label => "都道府県" %>
+        <%= f.select :region ,@region_arraty,:label => "都道府県" %>
 
-  <%# f.label "password",:password %>
-  <%= f.password_field :password,:label => "パスワード" %>
+        <%= f.password_field :password,:label => "パスワード" %>
 
-  <%# f.label "password_confirmation", :password_confirmation %>
-  <%= f.password_field :password_confirmation,:label => "確認パスワード" %>
+        <%= f.password_field :password_confirmation,:label => "確認パスワード" %>
 
-  <%= f.submit "Sign Up" %>
-<% end %>
-
+        <%= f.submit "Sign Up" %>
+    <% end %>
+  </div>
+</div>
