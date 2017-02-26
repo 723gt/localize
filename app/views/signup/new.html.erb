@@ -1,3 +1,9 @@
+
+<div class="text-center">
+  <% if @flag.nil? %>
+    <%= @msg %>
+  <% end %>
+</div>
 <div class="row">
   <div class="col_md_4 well center-block">
     <%= bootstrap_form_for @user,
