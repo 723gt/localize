@@ -4,6 +4,13 @@ class LoginController < ApplicationController
   end
 
   def create
-    render :text => params[:user]
+    @user = User.all
+    puts @user.find_by_user_id(params[:user][:user_id]).nil?
+    if @user.find_by_user_id(params[:user][:user_id])
+      msg = "ok"
+    else
+      msg = "ng"
+    end
+    render :text => msg
   end
 end
