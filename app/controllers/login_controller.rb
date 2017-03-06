@@ -4,9 +4,9 @@ class LoginController < ApplicationController
   end
 
   def create
-    @user = User.all
-    puts @user.find_by_user_id(params[:user][:user_id]).nil?
-    if @user.find_by_user_id(params[:user][:user_id])
+    user = User.find_by_user_id(params[:user][:user_id])
+
+    if user && user.authenticate(params[:user][:password])
       msg = "ok"
     else
       msg = "ng"
