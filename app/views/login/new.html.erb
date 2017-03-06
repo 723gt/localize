@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col_md_4 well center-block">
+    <%= bootstrap_form_for @user, 
+           :url => {:action => 'create'},:html => {:class => 'ext-center'} do |f| %>                        
+      <%= f.text_field :user_id,:label => "ID" %>
+      <%= f.password_field :password,:label => "パスワード" %>
+      <%= f.submit "Log In" %>
+    <% end %>
+  </div>
+</div>
+
+
