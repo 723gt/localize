@@ -7,10 +7,12 @@ class LoginController < ApplicationController
     user = User.find_by_user_id(params[:user][:user_id])
 
     if user && user.authenticate(params[:user][:password])
-      msg = "ok"
+      ctrl = "timeline"
+      act = "index"
     else
-      msg = "ng"
+      ctrl = "login" 
+      act = "new"
     end
-    render :text => msg
+    redirect_to(:controller => ctrl,:action => act)
   end
 end
