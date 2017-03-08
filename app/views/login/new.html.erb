@@ -1,3 +1,7 @@
+<% if @err_msg %>
+  <%= @err_msg %>
+<% end %>
+
 <div class="row">
   <div class="col_md_4 well center-block">
     <%= bootstrap_form_for @user, 

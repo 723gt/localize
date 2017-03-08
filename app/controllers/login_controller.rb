@@ -1,5 +1,11 @@
 class LoginController < ApplicationController
   def new
+    puts @err_msg
+    if session[:login_err]
+      @err_msg = session[:login_err]
+    else 
+      @err_msg = false
+    end
     @user = User.new
   end
 
@@ -9,9 +15,11 @@ class LoginController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       ctrl = "timeline"
       act = "index"
+      session[:login] = nil
     else
       ctrl = "login" 
       act = "new"
+      session[:login_err] = "IDかパスワードが間違っています"
     end
     redirect_to(:controller => ctrl,:action => act)
   end
