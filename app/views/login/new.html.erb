@@ -1,15 +1,18 @@
-<% if @err_msg %>
-  <%= @err_msg %>
-<% end %>
-
+<div class="text-center">
+  <% if @err_msg %>
+    <%= @err_msg %>
+  <% end %>
+</div>
 <div class="row">
-  <div class="col_md_4 well center-block">
-    <%= bootstrap_form_for @user, 
-           :url => {:action => 'create'},:html => {:class => 'ext-center'} do |f| %>                        
-      <%= f.text_field :user_id,:label => "ID" %>
-      <%= f.password_field :password,:label => "パスワード" %>
-      <%= f.submit "Log In" %>
-    <% end %>
+  <div class="col-xs-3">
+    <div class="well ">
+      <%= bootstrap_form_for @user, 
+             :url => {:action => 'create'},:html => {:class => 'form-horizontal text-center'} do |f| %>                        
+        <%= f.text_field :user_id,:label => "ID" %>
+        <%= f.password_field :password,:label => "パスワード" %>
+        <%= f.submit "Log In" %>
+      <% end %>
+    </div>
   </div>
 </div>
 

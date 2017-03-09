@@ -6,6 +6,7 @@ class LoginController < ApplicationController
     else 
       @err_msg = false
     end
+    session[:login_err] = nil
     @user = User.new
   end
 
