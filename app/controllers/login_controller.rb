@@ -16,7 +16,8 @@ class LoginController < ApplicationController
     if user && user.authenticate(params[:user][:password])
       ctrl = "timeline"
       act = "index"
-      session[:login] = nil
+      session[:login_err] = nil
+      session[:user_name] = user.name
     else
       ctrl = "login" 
       act = "new"

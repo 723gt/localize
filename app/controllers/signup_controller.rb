@@ -40,6 +40,7 @@ class SignupController < ApplicationController
         @user.save
         to_cont = "timeline"
         to_act = "index"
+        session[:user_name] = params[:user][:name]
       rescue ActiveRecord::RecordNotUnique => e
         session[:signup_err] = "※このIDはすでに使用されています※"
         to_cont = "signup"
