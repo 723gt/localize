@@ -5,7 +5,7 @@
   <% end %>
 </div>
 <div class="row">
-  <div class="col_md_4 well center-block">
+  <div class="col-xs-3 well center-block">
     <%= bootstrap_form_for @user,
       :url => {:action => 'create'},:html => {:class => "text-center"} do |f| %>
         <%= f.text_field :user_id,:label => "ID" %>
