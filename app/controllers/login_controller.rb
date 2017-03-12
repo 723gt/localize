@@ -25,4 +25,9 @@ class LoginController < ApplicationController
     end
     redirect_to(:controller => ctrl,:action => act)
   end
+
+  def logout
+    session[:user_name] = session[:user_id] = nil
+    redirect_to(:action => 'new')
+  end
 end

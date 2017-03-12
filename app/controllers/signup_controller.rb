@@ -6,6 +6,7 @@ class SignupController < ApplicationController
       @err_flag = 1
       @msg = session[:signup_err]
     end
+    session[:signup_err] = nil
     @user = User.new
     @region_arraty = [
             ["北海道",1],["青森県",2], ["岩手県",3], ["宮城県",4], ["秋田県",5],
