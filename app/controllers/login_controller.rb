@@ -28,6 +28,6 @@ class LoginController < ApplicationController
 
   def logout
     session[:user_name] = session[:user_id] = nil
-    redirect_to(:action => 'new')
+    redirect_to(:root)
   end
 end
