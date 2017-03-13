@@ -1,2 +1,16 @@
 <%= render :partial => 'layouts/header' %>
-<%= session[:user_id] %>
+<div class="row">
+  <div class="col-md-1 col-md-offset-1">
+    <div class="user_name">
+      <label> Name: </label>
+      <%= session[:user_name] %>
+    </div>
+    <div>
+      <label>@</label>
+      <%= session[:user_id] %>
+    </div>
+  </div>
+  <div class="col-md-3 col-md-offset-3">
+    <!-- ToDo:TimeLine -->
+  </div>
+</div>

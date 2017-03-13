@@ -18,6 +18,7 @@ class LoginController < ApplicationController
       act = "index"
       session[:login_err] = nil
       session[:user_name] = user.name
+      session[:user_id] = user.user_id
     else
       ctrl = "login" 
       act = "new"
