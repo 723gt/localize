@@ -33,7 +33,6 @@ class SignupController < ApplicationController
       end
     end 
    
-    puts session[:signup_err].nil?
 
     if params[:user][:password] == params[:user][:password_confirmation] && session[:signup_err].nil?
       @user = User.new(user_params)
@@ -42,6 +41,7 @@ class SignupController < ApplicationController
         to_cont = "timeline"
         to_act = "index"
         session[:user_name] = params[:user][:name]
+        session[:user_id] = params[:user][:user_id]
       rescue ActiveRecord::RecordNotUnique => e
         session[:signup_err] = "※このIDはすでに使用されています※"
         to_cont = "signup"
