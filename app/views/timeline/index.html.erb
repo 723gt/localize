@@ -3,7 +3,7 @@
   <div class="col-md-1 col-md-offset-1">
     <div class="user_name">
       <label> Name: </label>
-      <%= session[:user_name] %>
+      <%= link_to session[:user_name],profile_index_url(user_id: session[:user_id]) %>
     </div>
     <div>
       <label>@</label>
@@ -13,7 +13,8 @@
   <div class="col-md-3 col-md-offset-3">
     <% @time_line.each do |t| %>
       <div>
-        <%= "@" + t.user_id %>
+        <% disp_id = "@" + t.user_id %>
+        <%= link_to disp_id,profile_index_url(user_id: t.user_id) %>
       </div>
       <div>
         <%= t.content %>

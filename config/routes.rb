@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   get 'login' => 'login#new'
   post 'login' => 'login#create'
   get 'login/logout' => 'login#logout',as: :login_logout
+
+  get 'profile' => 'profile#index',as: :profile_index
+
 end
